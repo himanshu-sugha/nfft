@@ -1,12 +1,16 @@
+// backend/server.js
 const express = require('express');
-const cors = require('cors');
-const apiRoutes = require('./routes/api');
-
 const app = express();
-app.use(cors());
-app.use('/api', apiRoutes);
+const cors = require('cors');
+const db = require('./db'); // Import db connection setup
+const biddingRouter = require('./routes/bidding');
 
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.use(cors());
+app.use(express.json());
+
+// API routes
+app.use('/api/bidding', biddingRouter);
+
+app.listen(5000, () => {
+  console.log('Server running on http://localhost:5000');
 });

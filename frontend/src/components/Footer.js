@@ -1,11 +1,14 @@
+// src/components/Footer.js
 import React from 'react';
+import ComplianceMenu from './ComplianceMenu';
 
-function Footer() {
+const Footer = () => {
   return (
-    <footer style={{ padding: '1rem', backgroundColor: '#333', color: '#fff', textAlign: 'center' }}>
-      <p>&copy; 2024 Compliance-Aware NFT Marketplace</p>
-    </footer>
+    <div style={{ padding: '20px', backgroundColor: '#333', color: 'white', textAlign: 'center' }}>
+      <p>&copy; 2024 NFT Marketplace</p>
+     
+    </div>
   );
-}
+};
 
 export default Footer;

@@ -43,7 +43,23 @@ const Header = () => {
           fontWeight: '500',
         }}>Marketplace</Link>
 
-        {/* Properly styled My Purchases link */}
+        <Link to="/schedule-drop" style={{
+          margin: '0 1rem',
+          fontSize: '1rem',
+          color: 'white',
+          textDecoration: 'none',
+          fontWeight: '500',
+        }}>Schedule Drop</Link>
+
+        <Link to="/bidding" style={{
+          margin: '0 1rem',
+          fontSize: '1rem',
+          color: 'white',
+          textDecoration: 'none',
+          fontWeight: '500',
+        }}>Bidding</Link>
+
+       
         <Link to="/my-purchases" style={{
           margin: '0 1rem',
           fontSize: '1rem',

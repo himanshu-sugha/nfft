@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SocialShare from './SocialShare'; // Import SocialShare component
 
 const MarketplaceItem = ({ id, title, price, imageUrl }) => {
   const cardStyle = {
@@ -29,12 +30,20 @@ const MarketplaceItem = ({ id, title, price, imageUrl }) => {
     marginBottom: '10px',
   };
 
+  // NFT object to pass to SocialShare
+  const nft = { id, title, imageUrl, currentBid: price, biddingEndTime: '2024-12-20T18:00:00Z' };
+
   return (
-    <Link to={`/nft/${id}`} style={cardStyle}>
-      <img src={imageUrl} alt={title} style={imageStyle} />
-      <h3>{title}</h3>
-      <p style={textStyle}>Price: {price} ETH</p>
-    </Link>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <Link to={`/nft/${id}`} style={cardStyle}>
+        <img src={imageUrl} alt={title} style={imageStyle} />
+        <h3>{title}</h3>
+        <p style={textStyle}>Price: {price} ETH</p>
+      </Link>
+
+      {/* Social Share Buttons */}
+      <SocialShare nft={nft} />
+    </div>
   );
 };
 
